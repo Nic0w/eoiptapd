@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <arpa/inet.h>
 
 #include "socket.h"
 
@@ -44,7 +45,7 @@ void socket_listen(struct environment_t *env) {
             continue;
 
         // forward frame
-        env->tap_forward(env, buf + payload_offset, pkt_hdr_tpl.size);
+        env->tap_forward(env, buf + payload_offset, ntohs(pkt_hdr_tpl.size));
     }
 }
 
