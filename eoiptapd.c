@@ -138,7 +138,7 @@ int main(int argc, char *argv[]) {
 
     fprintf(stderr, "[INFO] %ld processors found\n", cpu_count);
 
-    for (long i = 0; i < cpu_count; i++) {
+    for (long i = 0; i < 1; i++) {
         children->count++;
 
         children->children[i] = malloc(sizeof(struct environment_t));
